@@ -5,7 +5,7 @@ from pydantic_ai.models.openai import OpenAIModel
 from pydantic_ai.providers.openai import OpenAIProvider
 from rich.prompt import Prompt
 
-server = MCPServerHTTP(url='http://127.0.0.1:3500/sse')
+server = MCPServerHTTP(url='http://127.0.0.1:8000/sse')
 
 model_name = 'gpt-4o-mini'
 
@@ -16,7 +16,12 @@ agent = Agent(model, mcp_servers=[server])
 server.headers = {"client-id": "izzyacademy.msft"}
 
 global_message = """
-I am a helpful assistant. I can answer questions about Contoso Medical.
+Hello AI Search Developer,
+I am a helpful assistant and I can answer questions about Contoso Groceries - an online grocery service where shopping is a pleasure. 
+I have access to the AI Search Index for Contoso Groceries and can help developers interact with the data and resources in the AI Search service.
+Please let me know how I can help you. 
+Ask me to show you what tools I have available to support your development efforts. If you forget the tools, please ask me again.
+
 """
 prompt = """
 How can I help you?"""
